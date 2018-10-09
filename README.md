@@ -1,4 +1,5 @@
 # `uuid`
+[![Build Status](https://travis-ci.com/mhutter/uuid.svg?branch=master)](https://travis-ci.com/mhutter/uuid)
 
 Generate random (v4) UUIDs.
 

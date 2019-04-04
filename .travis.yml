@@ -2,11 +2,21 @@
 language: go
 go:
   - stable
+env:
+  - GO111MODULE=on
 
-install: GO111MODULE=on go build -o uuid .
+install: go build -o uuid .
 
 script:
   - test 1 -eq "$(./uuid | wc -l)"
   - test 37 -eq "$(./uuid | wc -c)"
   - test 5 -eq "$(./uuid -n 5 | wc -l)"
   - test 185 -eq "$(./uuid -n 5 | wc -c)"
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: curl -sL https://git.io/goreleaser | bash
+    on:
+      tags: true
+      condition: $TRAVIS_OS_NAME = linux

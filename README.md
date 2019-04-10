@@ -15,7 +15,18 @@ Generate random (v4) UUIDs.
 
 ## Installation
 
+**Homebrew tap** (macOS)
+
+    brew install mhutter/tap/uuid
+
+
+
+**go get** (any OS)
+
     go get -u github.com/mhutter/uuid
+
+
+Or [download a pre-built binary](https://github.com/mhutter/uuid/releases).
 
 
 ## License
